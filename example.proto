@@ -1,0 +1,11 @@
+service ToDo {
+    rpc GetItem(Cond) returns (Item) {}
+}
+
+message Cond {
+    int32 day = 1
+}
+
+message Item {
+    string content = 1
+}
