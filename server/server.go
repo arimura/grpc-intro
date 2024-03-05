@@ -8,8 +8,6 @@ import (
 
 	"github.com/arimura/grpc_intro"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
 )
 
 type ToDoServer struct {
@@ -17,7 +15,11 @@ type ToDoServer struct {
 }
 
 func (s *ToDoServer) GetItem(context.Context, *grpc_intro.Cond) (*grpc_intro.Item, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetItem not implemented")
+	c := "Hello, World!"
+	r := &grpc_intro.Item{
+		Content: &c,
+	}
+	return r, nil
 }
 
 func main() {
