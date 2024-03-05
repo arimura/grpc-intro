@@ -1,11 +1,13 @@
+option go_package = "github.com/arimura/grpc-intro";
+
 service ToDo {
     rpc GetItem(Cond) returns (Item) {}
 }
 
 message Cond {
-    required int32 day = 1
+    required int32 day = 1;
 }
 
 message Item {
-    required string content = 1
+    required string content = 1;
 }
