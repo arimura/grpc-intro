@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package hoge;
+
+option go_package = "github.com/arimura/grpc-intro/demo2/proto";
+
+service HogeService {
+  rpc GetHoge(GetHogeRequest) returns (GetHogeResponse);
+}
+
+message GetHogeRequest {
+  string id = 1;
+}
+
+message GetHogeResponse {
+  Hoge hoge = 1;
+}
+
+message Hoge {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+}
